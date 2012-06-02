@@ -62,3 +62,15 @@ Here is the full signature:
 
 - numpy
 - matplotlib
+
+## Screenshots
+
+[img1.png](https://github.com/mdipierro/canvas/blob/master/screenshots/img1.png)
+
+[img2.png](https://github.com/mdipierro/canvas/blob/master/screenshots/img2.png)
+
+[img3.png](https://github.com/mdipierro/canvas/blob/master/screenshots/img3.png)
+
+[img4.png](https://github.com/mdipierro/canvas/blob/master/screenshots/img4.png)
+
+[img5.png](https://github.com/mdipierro/canvas/blob/master/screenshots/img5.png)
