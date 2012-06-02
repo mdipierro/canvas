@@ -55,7 +55,7 @@ The names of the methods of the canvas objects are the same as the methods of th
 ### web2py example
 
     def my_image():
-        response.headers['Content-type']='image/png'
+        response.headers['Content-type'] = 'image/png'
         image_data = Canvas('title').binary()       
         return image_data
 
