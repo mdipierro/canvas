@@ -2,9 +2,9 @@
 
 I do not know about you but I find matplotlib fanatstic but overwhelming. I can never remember its syntax, yet I find myself often repeating the same boilerplate code.
 
-This simple library is not mean to be general but allows me to produce the quick and dirty plots I need.
+This simple library is not meant to be general but it allows me to produce the quick and dirty plots I often need.
 
-It consists of a single object, `Canvas` which has methods `plot`,`hist`,`errorbar`,`ellipses`,`imshow`, and `save`. These methods can be piped to overlap diffent types of plots. For example:
+`canvas.py` exposes a single object, `Canvas`, which has methods `plot`,`hist`,`errorbar`,`ellipses`,`imshow`, and `save`. These methods can be piped to overlap diffent types of plots. For example:
 
     >>> from random import gauss
     >>> from math import sin, cos
@@ -35,11 +35,11 @@ ellipses data is an arrat of 4-tuples, (x,y,dx,dy)
 
 imshow data is a square  2D array of numbers.
 
-They can be piped as follow:
+They can also be piped as:
 
     >>> Canvas(...).hist(...).hist(...).plot(...).save(...)
 
-Plots will be superimposed.
+The names of the methods of the canvas objects are the same as the methods of the corresponding matplotlib axis object.
 
 ## Arguments
 
@@ -53,3 +53,12 @@ Here is the full signature:
          def errorbar(self,data,color='black',marker='o',width=2,legend=None): ...
          def ellipses(self,data,color='blue',width=0.01,height=0.01): ...
          def imshow(self,data,interpolation='bilinear'): ...
+
+## License
+
+3-clause BSD license
+
+## Dependencies
+
+- numpy
+- matplotlib
