@@ -16,17 +16,16 @@ This simple library is not meant to be general but it allows me to produce the q
 hist data is an array of numbers.
 [output](https://github.com/mdipierro/canvas/blob/master/screenshots/img1.png)
 
-    >>> parabole = [(x,x*x) for x in range(0,20)]
-    >>> Canvas('My Second Image').plot(parabole).save('img2.png')
+    >>> spiral = [(x*cos(0.1*x),x*sin(0.1*x)) for x in range(0,300)]
+    >>> Canvas('My Second Image').plot(spiral).save('img2.png')
 
 plot data is an array of 2-tuples, (x,y).
 [output](https://github.com/mdipierro/canvas/blob/master/screenshots/img2.png)
 
     >>> points = [(x,x+gauss(0,1),0.5) for x in range(20)]
-    >>> Canvas('My Third Image').errorbar(points).save('img3.png')
+    >>> Canvas('My Third Image').errorbar(points).plot(points).save('img3.png')
 
-errorbar data is an array of 3-tuples, (x,y,dy).
-[output](https://github.com/mdipierro/canvas/blob/master/screenshots/img3.png)
+errorbar data is an array of 3-tuples, (x,y,dy). In the example above the plot is superimposed to errorbars. [output](https://github.com/mdipierro/canvas/blob/master/screenshots/img3.png)
 
     >>> blobs = [(gauss(0,1),gauss(0,1),0.05,0.05) for i in range(100)]
     >>> Canvas('My Fourth Image').ellipses(blobs).save('img4.png')
@@ -39,10 +38,6 @@ ellipses data is an arrat of 4-tuples, (x,y,dx,dy).
 
 imshow data is a square  2D array of numbers.
 [output](https://github.com/mdipierro/canvas/blob/master/screenshots/img5.png)
-
-You overlap plots as follows:
-
-    >>> Canvas(...).hist(...).hist(...).plot(...).save(...)
 
 The names of the methods of the canvas objects are the same as the methods of the corresponding matplotlib axis object.
 
