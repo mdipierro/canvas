@@ -40,7 +40,7 @@ ellipses data is an arrat of 4-tuples, (x,y,dx,dy).
 imshow data is a square  2D array of numbers.
 [output](https://github.com/mdipierro/canvas/blob/master/screenshots/img5.png)
 
-They can also be piped as:
+You overlap plots as follows:
 
     >>> Canvas(...).hist(...).hist(...).plot(...).save(...)
 
