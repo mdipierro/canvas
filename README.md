@@ -46,20 +46,20 @@ They can also be piped as:
 
 The names of the methods of the canvas objects are the same as the methods of the corresponding matplotlib axis object.
 
-## Django example:
+### Django example
 
     def my_image(request):
         image_data = Canvas('title').binary()       
         return HttpResponse(image_data, mimetype="image/png")
 
-## web2py example:
+### web2py example
 
     def my_image():
         response.headers['Content-type']='image/png'
         image_data = Canvas('title').binary()       
         return image_data
 
-## Flask example:
+### Flask example
 
     @app.route('/my_image')
     def my_image():
