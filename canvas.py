@@ -16,7 +16,15 @@ class Canvas(object):
         from matplotlib.backends.backend_agg import FigureCanvasAgg
         if self.legend:
             self.ax.legend([e[0] for e in self.legend],[e[1] for e in self.legend])
-        FigureCanvasAgg(self.fig).print_png(open(filename,'wb'))
+        if filename:
+            FigureCanvasAgg(self.fig).print_png(open(filename,'wb'))
+        else:
+            from cStringIO import StringIO
+            s = StringIO()
+            FigureCanvasAgg(self.fig).print_png(s)
+            return s.getvalue()
+
+    def binary(self): return self.save(None)
 
     def hist(self,data,bins=20,color='blue',legend=None):
         q = self.ax.hist(data,bins)            
