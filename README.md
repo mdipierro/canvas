@@ -30,7 +30,7 @@ errorbar data is an array of 3-tuples, (x,y,dy). In the example above the plot i
     >>> blobs = [(gauss(0,1),gauss(0,1),0.05,0.05) for i in range(100)]
     >>> Canvas('My Fourth Image').ellipses(blobs).save('img4.png')
 
-ellipses data is an arrat of 4-tuples, (x,y,dx,dy).
+ellipses data is an array of 4-tuples, (x,y,dx,dy).
 [output](https://github.com/mdipierro/canvas/blob/master/screenshots/img4.png)
 
     >>> waves = [[sin(0.1*x)*cos(0.1*x*y) for x in range(20)] for y in range(20)]

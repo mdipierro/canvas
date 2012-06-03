@@ -1,6 +1,6 @@
 class Canvas(object):
 
-    def __init__(self,title='title',xlab='x',ylab='y',xrange=None,yrange=None):    
+    def __init__(self,title='title',xlab='x',ylab='y',xrange=None,yrange=None):
         from matplotlib.figure import Figure
         self.fig = Figure()
         self.fig.set_facecolor('white')
@@ -59,3 +59,4 @@ class Canvas(object):
     def imshow(self,data,interpolation='bilinear'):
         self.ax.imshow(data).set_interpolation(interpolation)
         return self
+
