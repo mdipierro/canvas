@@ -14,8 +14,10 @@ class Canvas(object):
         self.ax.set_title(title)
         self.ax.set_xlabel(xlab)
         self.ax.set_ylabel(ylab)
-        if xrange: self.ax.set_xlim(xrange)
-        if yrange: self.ax.set_ylim(yrange)
+        if xrange:
+            self.ax.set_xlim(xrange)
+        if yrange:
+            self.ax.set_ylim(yrange)
         self.legend = []
 
     def save(self, filename='plot.png'):
@@ -28,23 +30,27 @@ class Canvas(object):
             FigureCanvasAgg(self.fig).print_png(s)
             return s.getvalue()
 
-    def binary(self): return self.save(None)
+    def binary(self):
+        return self.save(None)
 
     def hist(self, data, bins=20, color='blue', legend=None):
         q = self.ax.hist(data,bins)            
-        if legend: self.legend.append((q[0],legend))
+        if legend:
+            self.legend.append((q[0],legend))
         return self
 
     def plot(self, data, color='blue', style='-', width=2, legend=None):
         x,y = [p[0] for p in data], [p[1] for p in data]
         q = self.ax.plot(x,y,linestyle=style,linewidth=width,color=color)
-        if legend: self.legend.append((q[0],legend))
+        if legend:
+            self.legend.append((q[0],legend))
         return self
 
     def errorbar(self, data, color='black', marker='o', width=2, legend=None):
         x,y,dy = [p[0] for p in data], [p[1] for p in data], [p[2] for p in data]
         q = self.ax.errorbar(x,y,yerr=dy,fmt=marker,linewidth=width,color=color)
-        if legend: self.legend.append((q[0],legend))
+        if legend:
+            self.legend.append((q[0],legend))
         return self
 
     def ellipses(self, data, color='blue', width=0.01, height=0.01):
