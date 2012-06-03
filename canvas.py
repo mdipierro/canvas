@@ -1,7 +1,13 @@
+from cStringIO import StringIO
+
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+from matplotlib.patches import Ellipse
+
+
 class Canvas(object):
 
     def __init__(self,title='title',xlab='x',ylab='y',xrange=None,yrange=None):
-        from matplotlib.figure import Figure
         self.fig = Figure()
         self.fig.set_facecolor('white')
         self.ax = self.fig.add_subplot(111)
@@ -13,13 +19,11 @@ class Canvas(object):
         self.legend = []
 
     def save(self,filename='plot.png'):
-        from matplotlib.backends.backend_agg import FigureCanvasAgg
         if self.legend:
             self.ax.legend([e[0] for e in self.legend],[e[1] for e in self.legend])
         if filename:
             FigureCanvasAgg(self.fig).print_png(open(filename,'wb'))
         else:
-            from cStringIO import StringIO
             s = StringIO()
             FigureCanvasAgg(self.fig).print_png(s)
             return s.getvalue()
@@ -44,7 +48,6 @@ class Canvas(object):
         return self
 
     def ellipses(self,data,color='blue',width=0.01,height=0.01):
-        from matplotlib.patches import Ellipse
         for point in data:
             x, y = point[:2]
             dx = point[2] if len(point)>2 else width
