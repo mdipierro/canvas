@@ -4,7 +4,7 @@ I do not know about you but I find matplotlib fanatstic but overwhelming. I can 
 
 This simple library is not meant to be general but it allows me to produce the quick and dirty plots I often need.
 
-`canvas.py` exposes a single object, `Canvas`, which has methods `plot`,`hist`,`errorbar`,`ellipses`,`imshow`, and `save`. These methods can be piped to overlap diffent types of plots. For example:
+`canvas.py` exposes a single object, `Canvas`, which has methods `plot`,`hist`,`errorbar`,`ellipses`,`imshow`, and `save`. These methods can be chained to overlap diffent types of plots. For example:
 
     >>> from random import gauss
     >>> from math import sin, cos
