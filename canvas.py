@@ -59,4 +59,3 @@ class Canvas(object):
     def imshow(self,data,interpolation='bilinear'):
         self.ax.imshow(data).set_interpolation(interpolation)
         return self
-
