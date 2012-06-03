@@ -34,7 +34,7 @@ class Canvas(object):
         return self.save(None)
 
     def hist(self, data, bins=20, color='blue', legend=None):
-        q = self.ax.hist(data,bins)            
+        q = self.ax.hist(data,bins)
         if legend:
             self.legend.append((q[0],legend))
         return self
