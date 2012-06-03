@@ -1,3 +1,7 @@
+# Simplified interface to matplotlib
+# Authors: Massimo Di Pierro & Laurent Peuch
+# License: 3-clause BSD (c) 2012
+
 from cStringIO import StringIO
 
 from matplotlib.figure import Figure
