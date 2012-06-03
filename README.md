@@ -62,11 +62,7 @@ The names of the methods of the canvas objects are the same as the methods of th
         data = [gauss(0,1) for i in range(1000)]
         image_data = Canvas('title').hist(data).binary()
         response.headers['Content-type'] = 'image/png'
-<<<<<<< HEAD
         return Response(image_data)
-=======
-        return Canvas('title').hist(data).binary()
->>>>>>> 08980e53d9d416860d4558571c2c4d1cc29058fe
 
 ## Arguments
 
