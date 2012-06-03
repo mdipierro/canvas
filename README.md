@@ -76,11 +76,22 @@ Here is the full signature:
          def ellipses(self,data,color='blue',width=0.01,height=0.01): ...
          def imshow(self,data,interpolation='bilinear'): ...
 
+## Installation
+
+You'll need numpy and matplotlib.
+
+From source:
+
+    python setup.py install
+
+If you want to install the dependancies using pip you need to process this way:
+
+    pip install numpy
+    # THEN
+    pip install matplotlib
+
+Be **sure** to have numpy installed before installing matplotlib otherwise the installation will fail.
+
 ## License
 
 3-clause BSD license
-
-## Dependencies
-
-- numpy
-- matplotlib
