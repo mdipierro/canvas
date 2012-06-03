@@ -7,7 +7,7 @@ from matplotlib.patches import Ellipse
 
 class Canvas(object):
 
-    def __init__(self,title='title',xlab='x',ylab='y',xrange=None,yrange=None):
+    def __init__(self, title='title', xlab='x', ylab='y', xrange=None, yrange=None):
         self.fig = Figure()
         self.fig.set_facecolor('white')
         self.ax = self.fig.add_subplot(111)
@@ -18,7 +18,7 @@ class Canvas(object):
         if yrange: self.ax.set_ylim(yrange)
         self.legend = []
 
-    def save(self,filename='plot.png'):
+    def save(self, filename='plot.png'):
         if self.legend:
             self.ax.legend([e[0] for e in self.legend],[e[1] for e in self.legend])
         if filename:
@@ -30,24 +30,24 @@ class Canvas(object):
 
     def binary(self): return self.save(None)
 
-    def hist(self,data,bins=20,color='blue',legend=None):
+    def hist(self, data, bins=20, color='blue', legend=None):
         q = self.ax.hist(data,bins)            
         if legend: self.legend.append((q[0],legend))
         return self
 
-    def plot(self,data,color='blue',style='-',width=2,legend=None):
+    def plot(self, data, color='blue', style='-', width=2, legend=None):
         x,y = [p[0] for p in data], [p[1] for p in data]
         q = self.ax.plot(x,y,linestyle=style,linewidth=width,color=color)
         if legend: self.legend.append((q[0],legend))
         return self
 
-    def errorbar(self,data,color='black',marker='o',width=2,legend=None):
+    def errorbar(self, data, color='black', marker='o', width=2, legend=None):
         x,y,dy = [p[0] for p in data], [p[1] for p in data], [p[2] for p in data]
         q = self.ax.errorbar(x,y,yerr=dy,fmt=marker,linewidth=width,color=color)
         if legend: self.legend.append((q[0],legend))
         return self
 
-    def ellipses(self,data,color='blue',width=0.01,height=0.01):
+    def ellipses(self, data, color='blue', width=0.01, height=0.01):
         for point in data:
             x, y = point[:2]
             dx = point[2] if len(point)>2 else width
@@ -59,6 +59,6 @@ class Canvas(object):
             ellipse.set_facecolor(color)
         return self
 
-    def imshow(self,data,interpolation='bilinear'):
+    def imshow(self, data, interpolation='bilinear'):
         self.ax.imshow(data).set_interpolation(interpolation)
         return self
