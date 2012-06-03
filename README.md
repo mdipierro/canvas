@@ -45,7 +45,7 @@ The names of the methods of the canvas objects are the same as the methods of th
 
     def my_image(request):
         data = [gauss(0,1) for i in range(1000)]
-        image_data = Canvas('title').hist(data).binary()       
+        image_data = Canvas('title').hist(data).binary()
         return HttpResponse(image_data, mimetype="image/png")
 
 ### web2py example
@@ -53,7 +53,7 @@ The names of the methods of the canvas objects are the same as the methods of th
     def my_image():
         data = [gauss(0,1) for i in range(1000)]
         response.headers['Content-type'] = 'image/png'
-        return Canvas('title').hist(data).binary()       
+        return Canvas('title').hist(data).binary()
 
 ### Flask example
 
@@ -61,7 +61,7 @@ The names of the methods of the canvas objects are the same as the methods of th
     def my_image():
         data = [gauss(0,1) for i in range(1000)]
         response.headers['Content-type'] = 'image/png'
-        return Canvas('title').hist(data).binary()       
+        return Canvas('title').hist(data).binary()
 
 ## Arguments
 
@@ -70,7 +70,7 @@ Here is the full signature:
     class Canvas(object):
          def __init__(self,title='title',xlab='x',ylab='y',xrange=None,yrange=None): ...
          def save(self,filename='plot.png'): ...
-         def hist(self,data,bins=20,color='blue',legend=None): ...             
+         def hist(self,data,bins=20,color='blue',legend=None): ...
          def plot(self,data,color='blue',style='-',width=2,legend=None): ...
          def errorbar(self,data,color='black',marker='o',width=2,legend=None): ...
          def ellipses(self,data,color='blue',width=0.01,height=0.01): ...
@@ -84,6 +84,3 @@ Here is the full signature:
 
 - numpy
 - matplotlib
-
-
-
