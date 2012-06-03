@@ -44,23 +44,24 @@ The names of the methods of the canvas objects are the same as the methods of th
 ### Django example
 
     def my_image(request):
-        image_data = Canvas('title').binary()       
+        data = [gauss(0,1) for i in range(1000)]
+        image_data = Canvas('title').hist(data).binary()       
         return HttpResponse(image_data, mimetype="image/png")
 
 ### web2py example
 
     def my_image():
+        data = [gauss(0,1) for i in range(1000)]
         response.headers['Content-type'] = 'image/png'
-        image_data = Canvas('title').binary()       
-        return image_data
+        return Canvas('title').hist(data).binary()       
 
 ### Flask example
 
     @app.route('/my_image')
     def my_image():
+        data = [gauss(0,1) for i in range(1000)]
         response.headers['Content-type'] = 'image/png'
-        image_data = Canvas('title').binary()       
-        return image_data
+	return Canvas('title').hist(data).binary()       
 
 ## Arguments
 
