@@ -9,7 +9,7 @@ setup(name='canvas',
       author='Massimo DiPierro',
       # haven't found your email addr
       # author_email='',
-      long_description=open("README.md").read(),
+      long_description=open("README").read(),
       url='https://github.com/mdipierro/canvas',
       install_requires=['numpy', 'matplotlib'],
       py_modules=["canvas"],
