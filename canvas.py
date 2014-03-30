@@ -26,7 +26,8 @@ class Canvas(object):
 
     def save(self, filename='plot.png'):
         if self.legend:
-            self.ax.legend([e[0] for e in self.legend],[e[1] for e in self.legend])
+            legend = self.ax.legend([e[0] for e in self.legend],[e[1] for e in self.legend])
+            legend.get_frame().set_alpha(0.7)
         if filename:
             FigureCanvasAgg(self.fig).print_png(open(filename, 'wb'))
         else:
@@ -72,3 +73,4 @@ class Canvas(object):
     def imshow(self, data, interpolation='bilinear'):
         self.ax.imshow(data).set_interpolation(interpolation)
         return self
+
