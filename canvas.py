@@ -2,7 +2,10 @@
 # Authors: Massimo Di Pierro & Laurent Peuch
 # License: 3-clause BSD (c) 2012
 
-from cStringIO import StringIO
+try:
+    from cStringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg
