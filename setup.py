@@ -1,19 +1,28 @@
-#!/usr/bin/python
-# -*- coding:Utf-8 -*-
+import ast
+import re
 
-from setuptools import setup
+import setuptools
 
-setup(name='canvas',
-      version='0.2',
-      description='canvas is a simple interface to most common matplotlib functions',
-      author='Massimo DiPierro',
-      author_email='massimo.dipierro@gmail.com',
-      long_description=open("README").read(),
-      url='https://github.com/mdipierro/canvas',
-      install_requires=['numpy', 'matplotlib'],
-      py_modules=["canvas"],
-      license= 'BSD',
-      keywords='matplotlib',
-     )
-
-# vim:set shiftwidth=4 tabstop=4 expandtab:
+setuptools.setup(
+    name = "canvas",
+    version = 0.2,
+    url = 'https://github.com/mdipierro/canvas',
+    license = 'BSD',
+    author = 'Massimo Di Pierro',
+    author_email = 'massimo.dipierro@gmail.com',
+    maintainer = 'Massimo Di Pierro',
+    maintainer_email = 'massimo.dipierro@gmail.com',
+    description = 'a minimallist abstraction layer on top of matplotlib',
+    packages = ['canvas'],
+    include_package_data = True,
+    zip_safe = False,
+    platforms = 'any',
+    classifiers = [
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 3.8',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+    ],
+)
