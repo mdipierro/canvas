@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name = "canvas",
-    version = 0.2,
+    version = 0.3,
     url = 'https://github.com/mdipierro/canvas',
     license = 'BSD',
     author = 'Massimo Di Pierro',

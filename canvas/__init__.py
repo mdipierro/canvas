@@ -8,8 +8,6 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.patches import Ellipse
 
-__version__ = "20210718"
-
 
 class Canvas(object):
     def __init__(self, title="title", xlab="x", ylab="y", xrange=None, yrange=None):
